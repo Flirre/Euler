@@ -6,3 +6,7 @@ What is the largest prime factor of the number 600851475143 ?
 
 -}
 
+-- mod [2..n-1] if any Trues, then it's not Prime.
+--isPrime 1 = [False]
+--isPrime 2 = [True]
+isPrime n = map (n `mod` ) [2..n-1] -- plocka ut alla nollor och kolla efter tom lista
