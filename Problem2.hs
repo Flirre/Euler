@@ -11,6 +11,8 @@ exceed four million, find the sum of the even-valued terms.
 
 -}
 
-x = [x | x <- [0..10]]
+x = [fib x | x <- [0..33], ((fib x) `mod` 2 == 0), ((fib x) < 4000000)]
 
-
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
