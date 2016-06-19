@@ -20,4 +20,8 @@ isPrimes :: [Int] -> [(Int,Bool)]
 isPrimes [x] = [(x, isPrime x)]
 isPrimes (x:xs) = (x, isPrime x):isPrimes xs
 
+-- Inga nollor i listan == primtal.
 --[x | x <- [0..n], (n `mod` x == 0) && (isPrime n == True)] - plocka ut primtalsfaktorer och sist i listan är störst.
+
+getPrimeFactors n = [x | x <- [1..n-1], (n `mod` x == 0), (isPrime x == True)]
+getBiggestPrimeFactor n = last (getPrimeFactors n)
