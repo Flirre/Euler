@@ -15,4 +15,9 @@ isPrime 2 = True
 isPrime n | (isPrime' n) == [] = True
           | otherwise = False
 isPrime' n =  [x | x <- map (n `mod` ) [2..n-1], x == 0]
+
+isPrimes :: [Int] -> [(Int,Bool)]
+isPrimes [x] = [(x, isPrime x)]
+isPrimes (x:xs) = (x, isPrime x):isPrimes xs
+
 --[x | x <- [0..n], (n `mod` x == 0) && (isPrime n == True)] - plocka ut primtalsfaktorer och sist i listan är störst.
