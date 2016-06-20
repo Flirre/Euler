@@ -18,7 +18,7 @@ isPalindrome x = show x == reverseInt x
 
 prop_reverseint :: Integer -> Bool
 prop_reverseint x = show (abs x) == reverse(reverseInt (abs x))
-
+{-
 --threeDigitProducts :: [Int]
 --threeDigitProducts = [100..999] * [100..999]
 mul :: Integer -> [Integer] -> [Integer]
@@ -29,3 +29,4 @@ mul x (y:ys) = (x*y) : mul x ys
 muls _ [] = []
 --muls [x] [y] = [x*y]
 muls (x:xs) (y) = (mul x y) : (muls xs y)
+-}
