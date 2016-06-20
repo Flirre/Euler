@@ -27,5 +27,5 @@ mul x (y:ys) = (x*y) : mul x ys
 
 --muls :: [Integer] -> [Integer] -> [Integer]
 muls _ [] = []
-muls [x] [y] = [x*y]
+--muls [x] [y] = [x*y]
 muls (x:xs) (y) = (mul x y) : (muls xs y)
