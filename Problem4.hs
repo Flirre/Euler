@@ -10,23 +10,22 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 -}
 
 
-reverseInt :: Int -> String
+reverseInt :: Integer -> String
 reverseInt x = reverse(show x)
 
 isPalindrome x = show x == reverseInt x
 
 
-prop_reverseint :: Int -> Bool
+prop_reverseint :: Integer -> Bool
 prop_reverseint x = show (abs x) == reverse(reverseInt (abs x))
 
 --threeDigitProducts :: [Int]
 --threeDigitProducts = [100..999] * [100..999]
+mul :: Integer -> [Integer] -> [Integer]
+mul _ [] = []
+mul x (y:ys) = (x*y) : mul x ys
 
-
---oDPs :: [Int] -> [Int]
---oDPs n = map (*n) [0..9]
-
-
-mul n = map (*n)
-
-times2 = map (*2) [0..10]
+--muls :: [Integer] -> [Integer] -> [Integer]
+muls _ [] = []
+muls [x] [y] = [x*y]
+muls (x:xs) (y) = (mul x y) : (muls xs y)
